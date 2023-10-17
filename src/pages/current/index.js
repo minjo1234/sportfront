@@ -1,5 +1,5 @@
 import MainLayout from "../layout/MainLayout";
-import CurrentKbo from "../../components/CurrentGame/CurrentKbo";
+import CurrentKbo from "../../components/CurrentGame /CurrentKbo";
 
 function Current(){
     return(
