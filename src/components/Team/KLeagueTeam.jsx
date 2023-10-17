@@ -64,7 +64,7 @@ export default function KLeagueTeam() {
                 <p style={pStyle}>무승부</p>
                 <p style={pStyle}>패</p>
                 <p style={pStyle}>점수</p>
-                <p style={pStyle}>마지막 10경기</p>
+                <p style={pStyle}>마지막 10경기</p>]
                 <p style={pStyle}>실점</p>
                 <p style={pStyle}>득실률</p>
                 <p style={pStyle}>최근 5경기</p>
