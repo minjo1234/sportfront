@@ -9,7 +9,7 @@ import Join from "./pages/join";
 import Match from "./pages/match";
 import Chat from "./pages/chat";
 import Team from "./pages/team";
-import CurrentKbo from "./components/CurrentGame /CurrentKbo";
+import CurrentKbo from "./components/CurrentGame/CurrentKbo";
 import Current from "./pages/current";
 
 const Router = createBrowserRouter([
