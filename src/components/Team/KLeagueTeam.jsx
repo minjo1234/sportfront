@@ -7,16 +7,16 @@ export default function KLeagueTeam() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('/kLeague/Team')
+                const response = await axios.get('/kLeague/team')
                 setTeamData(response.data);
-
+                console.log(response.data);
             } catch (err) {
                 console.log(err)
             }
         }
         fetchData();
     }, []);
-
+    console.log(teamData)
 
     const listItemStyle = {
         display: "flex", // 가로로 배열
@@ -55,9 +55,35 @@ export default function KLeagueTeam() {
 
     return (
         <div>
-        {teamData.map((team , index) =>{
-                <li key={index}>{team.k_Team_Id}</li>
-            })}
+            <div style={commonStyle}>
+                <p style={pStyle}>팀 순위</p>
+                <p style={pStyle}>팀 이름</p>
+                <p style={pStyle}>게임수</p>
+                <p style={pStyle}>승점</p>
+                <p style={pStyle}>승</p>
+                <p style={pStyle}>무승부</p>
+                <p style={pStyle}>패</p>
+                <p style={pStyle}>점수</p>
+                <p style={pStyle}>마지막 10경기</p>
+                <p style={pStyle}>실점</p>
+                <p style={pStyle}>득실률</p>
+                <p style={pStyle}>최근 5경기</p>
+        </div>
+        {teamData.map((team , index)=> (
+            <div key={index} style={{ ...commonStyle, marginTop: '10px' }}>
+                <p style={pStyleElement}>{team.k_league_Ranking}</p>
+                <p style={pStyleElement}>{team.k_league_club_Name}</p>
+                <p style={pStyleElement}>{team.k_league_club_Game}</p>
+                <p style={pStyleElement}>{team.k_league_Win_Point}</p>
+                <p style={pStyleElement}>{team.k_league_Win}</p>
+                <p style={pStyleElement}>{team.k_league_Draw}</p>
+                <p style={pStyleElement}>{team.k_league_Lose}</p>
+                <p style={pStyleElement}>{team.k_league_Score}</p>
+                <p style={pStyleElement}>{team.k_league_Lose_Score}</p>
+                <p style={pStyleElement}>{team.k_league_Gainor_Loss}</p>
+                <p style={pStyleElement}>{team.k_league_recent}</p>
+            </div>
+        ))}
         </div>
     )
 }

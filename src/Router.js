@@ -9,8 +9,9 @@ import Join from "./pages/join";
 import Match from "./pages/match";
 import Chat from "./pages/chat";
 import Team from "./pages/team";
-import CurrentKbo from "./components/CurrentGame/CurrentKbo";
 import Current from "./pages/current";
+import KLeagueTeam from "./components/Team/KLeagueTeam";
+import KleagueTeam from "./pages/Kleague";
 
 const Router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const Router = createBrowserRouter([
       {
         path: 'current',
         element: <Current/>,
+      },
+      {
+        path: '/kLeague/team',
+        element : <KleagueTeam/> ,
       }
     ],
 

@@ -6,7 +6,6 @@ function Match(){
 
     return(
         <MainLayout>
-            <MatchList/>
         </MainLayout>
     )
 }
