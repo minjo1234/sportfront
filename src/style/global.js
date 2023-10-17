@@ -30,7 +30,7 @@ body {
 	line-height: 1;
     color: black;
 	font-family: 'Pretendard';
-	background-color: rgb(245, 245, 245);
+	background-color: #202026;
 }
 ol, ul {
 	list-style: none;
