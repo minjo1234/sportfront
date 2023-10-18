@@ -74,7 +74,6 @@ export default function SignIn() {
   const handleSubmit = (e) => {
     login(values)
       .then((response) => {
-        localStorage.clear();
         localStorage.setItem("tokenType", response.tokenType);
         localStorage.setItem("accessToken", response.accessToken);
         localStorage.setItem("refreshToken", response.refreshToken);
