@@ -8,10 +8,9 @@ import MyPage from './pages/mypage';
 import Join from "./pages/join";
 import Match from "./pages/match";
 import Chat from "./pages/chat";
-import Team from "./pages/team";
 import Current from "./pages/current";
-import KLeagueTeam from "./components/Team/KLeagueTeam";
-import KleagueTeam from "./pages/Kleague";
+import KLeagueTeamView from "./pages/Info/KLeague/KLeagueTeamView";
+import KboTeamView from "./pages/Info/KboTeam/KboTeamView";
 
 const Router = createBrowserRouter([
   {
@@ -47,8 +46,8 @@ const Router = createBrowserRouter([
         element: <Chat />,
       },
       {
-        path: 'team',
-        element: <Team/>
+        path: '/kbo/team',
+        element: <KboTeamView/>
       },
       {
         path: 'current',
@@ -56,7 +55,7 @@ const Router = createBrowserRouter([
       },
       {
         path: '/kLeague/team',
-        element : <KleagueTeam/> ,
+        element : <KLeagueTeamView/> ,
       }
     ],
 
