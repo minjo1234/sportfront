@@ -60,7 +60,7 @@ export const Form = styled.form`
 
 export default function SignIn() {
   const [values, setValues] = useState({
-    name: "",
+    userId: "",
     password: "",
   });
 
@@ -95,10 +95,10 @@ export default function SignIn() {
             <input
               type="text"
               className="form-control"
-              id="name"
+              id="userId"
               placeholder="ID"
               onChange={handleChange}
-              value={values.name}
+              value={values.userId}
             />
           </div>
           <div className="form-group">
