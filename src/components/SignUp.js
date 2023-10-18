@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { signUp } from "../api/AuthAPI";
-import {Form, FormContainer, FormWrapper} from "./SignIn";
 import axios from "axios";
-
+import {Form, FormContainer, FormWrapper} from "./SignIn";
 
 export default function SignUp() {
   const [values, setValues] = useState({
@@ -69,7 +68,8 @@ export default function SignUp() {
     }
   };
 
-  const fetchAllData = async () => {
+
+  const fetchAllData = async() => {
     try {
       const response = await axios.get('/api/allUser');
       const idList = response.data.map(member => member.userId);
@@ -144,7 +144,10 @@ export default function SignUp() {
               type="password"
               className="form-control"
               id="password"
+<<<<<<< HEAD
               name="password"
+=======
+>>>>>>> 832fa11e8dbeca73de4c8f14a8a384fb5525c72d
               placeholder="Password"
               onChange={handleChange}
               value={values.password}
@@ -155,6 +158,7 @@ export default function SignUp() {
             )}
           </div>
           <div className="form-group">
+<<<<<<< HEAD
             <input
                 type="password"
                 className="form-control"
@@ -226,6 +230,8 @@ export default function SignUp() {
             />
           </div>
           <div className="form-group">
+=======
+>>>>>>> 832fa11e8dbeca73de4c8f14a8a384fb5525c72d
             <button type="submit">Sign up</button>
           </div>
         </Form>
