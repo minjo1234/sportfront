@@ -7,6 +7,7 @@ function Join(){
         <MainLayout>
             <SignUp/>
         </MainLayout>
+
     )
 }
 

@@ -12,6 +12,7 @@ import Team from "./pages/team";
 import Current from "./pages/current";
 import KLeagueTeam from "./components/Team/KLeagueTeam";
 import KleagueTeam from "./pages/Kleague";
+import SignUp from "./components/SignUp";
 
 const Router = createBrowserRouter([
   {

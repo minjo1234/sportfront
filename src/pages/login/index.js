@@ -5,8 +5,9 @@ function Login() {
 
   return(
       <MainLayout>
-        <SignIn/>;
+        <SignIn/>
       </MainLayout>
+
   )
 }
 
