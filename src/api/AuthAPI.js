@@ -11,16 +11,16 @@ export const AuthApi = axios.create({
     },
 });
 
-export const login = async ({ name, password }) => {
-    const data = { name, password };
+export const login = async ({ userId, password }) => {
+    const data = { userId, password };
     console.log(data)
     const response = await AuthApi.post(`/api/auth/login`, data);
     console.log(response.data);
     return response.data;
 }
 
-export const signUp = async ({ name, password }) => {
-    const data = { name, password };
+export const signUp = async ({ userId,email,password,nickName,name,birthDate }) => {
+    const data = { userId,email,password,nickName,name,birthDate };
     console.log(data)
     const response = await AuthApi.post(`/api/auth/signup`, data);
     return response.data;

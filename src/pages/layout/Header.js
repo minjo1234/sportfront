@@ -11,6 +11,7 @@ const Header = () => {
     if (ACCESS_TOKEN) {
       fetchUser()
           .then((response) => {
+            console.log(response);
             setUser(response);
           }).catch((error) => {
         console.log(error);
@@ -20,6 +21,8 @@ const Header = () => {
 
   const handleLogout = async () => {
     localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken")
+    localStorage.removeItem("tokenType")
     window.location.href="/";
   }
 
@@ -31,7 +34,7 @@ const Header = () => {
               ?
               <Dropdown>
                 <Dropth>
-                  {user.name}
+                  {user.nickName}
                 </Dropth>
                 <DropdownContent>
                   <DropdownContentLink to="/my-page"> my-page</DropdownContentLink>
