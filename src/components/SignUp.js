@@ -144,10 +144,7 @@ export default function SignUp() {
               type="password"
               className="form-control"
               id="password"
-<<<<<<< HEAD
               name="password"
-=======
->>>>>>> 832fa11e8dbeca73de4c8f14a8a384fb5525c72d
               placeholder="Password"
               onChange={handleChange}
               value={values.password}
@@ -158,7 +155,7 @@ export default function SignUp() {
             )}
           </div>
           <div className="form-group">
-<<<<<<< HEAD
+
             <input
                 type="password"
                 className="form-control"
@@ -230,8 +227,6 @@ export default function SignUp() {
             />
           </div>
           <div className="form-group">
-=======
->>>>>>> 832fa11e8dbeca73de4c8f14a8a384fb5525c72d
             <button type="submit">Sign up</button>
           </div>
         </Form>
