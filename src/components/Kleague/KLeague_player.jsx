@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function KLeague_player() {
   const [playerdata, setPlayerData] = useState([]);
-  const [playerDetail, setPlayerDetail] = useState(false);
+  const [playerDetail, setPlayerDetail] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +17,23 @@ export default function KLeague_player() {
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const fetchPlayerDetail = async (k_league_player_id) => {
+      try {
+        const response = await axios.get(
+          `/kLeague/player/${k_league_player_id}`
+        );
+        setPlayerDetail(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    if (playerDetail) {
+      fetchPlayerDetail(playerDetail.k_league_player_id);
+    }
+  }, [playerDetail]);
 
   const commonStyle = {
     display: "flex",
@@ -53,8 +70,8 @@ export default function KLeague_player() {
   };
 
   const showPlayerDetail = (data) => {
+    setPlayerData(data);
     fetchPlayerDetail(data.k_league_player_id);
-    setPlayerDetail = !setPlayerDetail;
   };
 
   return (
