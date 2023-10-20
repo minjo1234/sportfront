@@ -30,7 +30,6 @@ export default function CurrentKbo() {
         gameTime = "18:30";
     }
 
-
     // 현재 시간을 가져옵니다
     const currentDate = new Date();
 
