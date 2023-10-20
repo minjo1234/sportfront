@@ -13,6 +13,7 @@ import Current from "./pages/current";
 import KLeagueTeam from "./components/Team/KLeagueTeam";
 import KleagueTeam from "./pages/Kleague";
 import SignUp from "./components/SignUp";
+import KBO from "./pages/kbo";
 
 const Router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const Router = createBrowserRouter([
       {
         path: '/kLeague/team',
         element : <KleagueTeam/> ,
+      },
+      {
+        path: '/KBO',
+        element : <KBO/> ,
       }
     ],
 

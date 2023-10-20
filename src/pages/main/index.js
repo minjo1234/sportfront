@@ -1,7 +1,7 @@
 import MainLayout from '../layout/MainLayout';
 import {NavbarLink} from "../layout/Header";
 import MatchList from "../../components/MatchList";
-import "./main.css";
+import TeamLogoPath from "../../components/TeamLogoPath";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 function Main() {
@@ -9,10 +9,7 @@ function Main() {
     <MainLayout>
         <MainContainer>
             <Box>
-                <nav>
-                    <h5>team icon</h5>
-                    <font>(click available)</font>
-                </nav>
+                <TeamLogoPath /> {/*팀 로고*/}
             </Box>
 
             <Box>
