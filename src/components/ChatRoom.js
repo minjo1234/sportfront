@@ -2,17 +2,18 @@ import { useRef, useState, useEffect } from "react";
 import * as StompJs from "@stomp/stompjs";
 import { fetchUser } from "../api/UserAPI";
 import { useLocation } from "react-router-dom";
+import styled from "styled-components";
 
 const ChatRoom = () => {
   const [chatList, setChatList] = useState([]);
   const [chat, setChat] = useState("");
-
+  const client = useRef({});
+  const messageEndRef = useRef(null)
   const channelId = useLocation().state.channelId;
   const [user, setUser] = useState({});
 
   const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
-  const client = useRef({});
 
   useEffect(() => {
     if (ACCESS_TOKEN) {
@@ -45,7 +46,7 @@ const ChatRoom = () => {
     console.log(user.name);
     const message = {
       channelId: channelId,
-      writerName: user.name,
+      writerName: user.nickName,
       chat: chat,
     };
     console.log(message);
@@ -70,15 +71,15 @@ const ChatRoom = () => {
   };
 
   const handleChange = (event) => {
-    // 채팅 입력 시 state에 값 설정
     setChat(event.target.value);
   };
 
   const handleSubmit = (event, chat) => {
-    // 보내기 버튼 눌렀을 때 publish
     event.preventDefault();
-    console.log(chat);
-    publish(chat);
+    if(chat){
+      console.log(chat);
+      publish(chat);
+    }
   };
 
   useEffect(() => {
@@ -86,21 +87,27 @@ const ChatRoom = () => {
     return () => disconnect();
   }, []);
 
+
+  useEffect(() => {
+    messageEndRef.current.scrollIntoView({behavior:'smooth'})
+  }, [chatList])
+
   return (
     <>
       {ACCESS_TOKEN ? (
         <div>
-          <div className="chat-list">
+          <ChatBox>
             {chatList.map((data) => {
               return (
-                <ul key={data.channelId}>
+                <ChatUl key={data.channelId}>
                   <li>
                     {data.writerName} : {data.chat}
                   </li>
-                </ul>
+                </ChatUl>
               );
             })}
-          </div>
+            <div ref={messageEndRef}></div>
+          </ChatBox>
           <form onSubmit={(event) => handleSubmit(event, chat)}>
             <div>
               <input
@@ -115,7 +122,7 @@ const ChatRoom = () => {
         </div>
       ) : (
         <div>
-          <div>null</div>
+          <div>login 해주세요!</div>
         </div>
       )}
     </>
@@ -123,3 +130,19 @@ const ChatRoom = () => {
 };
 
 export default ChatRoom;
+
+export const ChatBox = styled.div`
+  height: 200px;
+  border: white dashed 1px;
+  max-width: 300px;
+  padding-bottom:2px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  white-space:nowrap;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+`
+export const ChatUl = styled.ul`
+  color:#ffff;
+`

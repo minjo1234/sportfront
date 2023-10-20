@@ -68,7 +68,7 @@ export const Dropth = styled.button`
   border-radius : 4px;
   background-color: #202025;
   font-weight: 400;
-  color : #F8F3F3;
+  color : #ffff;
   padding : 12px;
   width :100px;
   text-align: left;

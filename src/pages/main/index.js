@@ -1,7 +1,5 @@
 import MainLayout from '../layout/MainLayout';
-import {NavbarLink} from "../layout/Header";
 import MatchList from "../../components/MatchList";
-import "./main.css";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 function Main() {
