@@ -12,6 +12,7 @@ import Current from "./pages/current";
 import KLeagueTeamView from "./pages/Info/KLeague/KLeagueTeamView";
 import KboTeamView from "./pages/Info/KboTeam/KboTeamView";
 import KLeauge_playerView from "./pages/Info/KLeague/KLeague_playerView";
+import KLeague_currentView from "./pages/Info/KLeague/KLeague_currentView";
 
 const Router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const Router = createBrowserRouter([
         path: "/kLeague/team",
         element: <KLeagueTeamView />,
       },
+      {
+        path: "/KLeague/current",
+        element: <KLeague_currentView/>,
+      }
     ],
   },
 ]);
