@@ -1,32 +1,31 @@
 import MainLayout from "../layout/MainLayout";
 import { NavbarLink } from "../layout/Header";
 import MatchList from "../../components/MatchList";
-import { Link } from "react-router-dom";
+import TeamLogoPath from "../../components/TeamLogoPath";
+import {Link} from "react-router-dom";
+
 import styled from "styled-components";
 function Main() {
   return (
     <MainLayout>
-      <MainContainer>
-        <Box>
-          <nav>
-            <h5>team icon</h5>
-            <font>(click available)</font>
-          </nav>
-        </Box>
+        <MainContainer>
+            <Box>
+                <TeamLogoPath /> {/*팀 로고*/}
+            </Box>
 
-        <Box>
-          <MatchList />
-          <Link to="/match">
-            <button>list 더보기</button>
-          </Link>
-        </Box>
+            <Box>
+              <MatchList />
+              <Link to="/match">
+                <button>list 더보기</button>
+              </Link>
+            </Box>
 
-        <Box>
-          <p>article</p>
-        </Box>
-        <Box>
-          <p>rank</p>
-        </Box>
+            <Box>
+              <p>article</p>
+            </Box>
+            <Box>
+              <p>rank</p>
+            </Box>
       </MainContainer>
     </MainLayout>
   );

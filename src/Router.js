@@ -9,6 +9,7 @@ import Join from "./pages/join";
 import Match from "./pages/match";
 import Chat from "./pages/chat";
 import Current from "./pages/current";
+import KBO from "./pages/kbo";
 import KLeagueTeamView from "./pages/Info/KLeague/KLeagueTeamView";
 import KboTeamView from "./pages/Info/KboTeam/KboTeamView";
 import KLeauge_playerView from "./pages/Info/KLeague/KLeague_playerView";
@@ -54,6 +55,10 @@ const Router = createBrowserRouter([
       {
         path: "current",
         element: <Current />,
+      },
+      {
+        path: '/KBO',
+        element : <KBO/> ,
       },
       {
         path: "/kLeague/player",
