@@ -22,8 +22,6 @@ export default function KLeaguePlayer() {
     try {
       const response = await axios.get(`/kLeague/player/${k_league_player_id}`);
       setPlayerDetail(response.data);
-      setPlayerDetail(response.data);
-      console.log(response.data);
       setDetailFetched(true);
     } catch (err) {
       console.error(err);
@@ -68,15 +66,13 @@ export default function KLeaguePlayer() {
   };
 
   const showPlayerDetail = (data) => {
-    if (
-      !detailFetched ||
-      playerDetail.k_league_player_id !== data.k_league_player_id
-    ) {
+    if (!detailFetched || playerDetail.k_league_player_id !== data.k_league_player_id) {
       fetchPlayerDetail(data.k_league_player_id);
     } else {
       clearPlayerDetail();
     }
   };
+
 
   return (
     <div>
