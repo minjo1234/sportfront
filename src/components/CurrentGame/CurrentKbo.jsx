@@ -139,10 +139,9 @@ export default function CurrentKbo() {
                 onClick={() => toggleGameContainer(index)}
               />
             </span>
-            <Link to="/chat" state={{ channelId: 3 }}>
+            <Link to="/chat" state={{ channelId: 1 }}>
               <button className="chatButton">실시간 채팅방</button>
             </Link>
-
             <span className="rightContent">
               {game.TodayRightGameInfo}
               <img
