@@ -1,0 +1,19 @@
+.NewsLatest {
+    font-size: 9px;
+    font-family: Arial, sans-serif;
+}
+
+.NewsLatest ul {
+    list-style: none;
+    padding: 0;
+}
+
+.NewsLatest li {
+    margin-bottom: 20px;
+}
+
+.NewsLatest h3 {
+    font-size: 15px;
+    text-align: left; /* 왼쪽 정렬 스타일 적용 */
+}
+
