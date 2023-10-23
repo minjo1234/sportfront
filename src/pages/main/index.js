@@ -3,6 +3,7 @@ import { NavbarLink } from "../layout/Header";
 import MatchList from "../../components/MatchList";
 import TeamLogoPath from "../../components/TeamLogoPath";
 import {Link} from "react-router-dom";
+import NewsLatest from "../../news/NewsLatest";
 
 import styled from "styled-components";
 function Main() {
@@ -21,7 +22,11 @@ function Main() {
             </Box>
 
             <Box>
-              <p>article</p>
+              <p>최신 뉴스</p>
+              <Link to="/articles">
+                <button>뉴스 더보기</button>
+                <NewsLatest/>
+              </Link>
             </Box>
             <Box>
               <p>rank</p>
