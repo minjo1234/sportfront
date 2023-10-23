@@ -5,6 +5,7 @@ import TeamLogoPath from "../../components/TeamLogoPath";
 import {Link} from "react-router-dom";
 
 import styled from "styled-components";
+import CurrentKbo from "../../components/CurrentGame/CurrentKbo";
 function Main() {
   return (
     <MainLayout>
@@ -16,6 +17,7 @@ function Main() {
             <Box>
               <MatchList />
               <Link to="/match">
+                  <CurrentKbo/>
                 <button>list 더보기</button>
               </Link>
             </Box>
