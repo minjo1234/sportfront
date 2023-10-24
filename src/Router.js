@@ -14,6 +14,9 @@ import KLeagueTeamView from "./pages/Info/KLeague/KLeagueTeamView";
 import KboTeamView from "./pages/Info/KboTeam/KboTeamView";
 import KLeauge_playerView from "./pages/Info/KLeague/KLeague_playerView";
 import KLeague_currentView from "./pages/Info/KLeague/KLeague_currentView";
+import Article from "./pages/news";
+import ArticleDetail from "./news/component/ArticleDetail";
+import MainLayout from "./pages/layout/MainLayout";
 
 const Router = createBrowserRouter([
   {
@@ -71,7 +74,19 @@ const Router = createBrowserRouter([
       {
         path: "/KLeague/current",
         element: <KLeague_currentView/>,
-      }
+      },
+      {
+        path: 'articles/',
+        element: <Article />,
+      },
+      {
+        path: 'articles/:id',
+        element: (
+            <MainLayout>
+              <ArticleDetail />
+            </MainLayout>
+        ),
+      },
     ],
   },
 ]);
