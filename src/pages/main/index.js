@@ -1,11 +1,10 @@
 import MainLayout from "../layout/MainLayout";
-import { NavbarLink } from "../layout/Header";
 import MatchList from "../../components/MatchList";
 import KBOLogoPath from "../../components/KBOLogoPath";
 import {Link} from "react-router-dom";
 import NewsLatest from "../../news/NewsLatest";
-
 import styled from "styled-components";
+import CurrentKbo from "../../components/CurrentGame/CurrentKbo";
 import KLeagueLogoPath from "../../components/KLeagueLogoPath";
 function Main() {
   return (
@@ -21,6 +20,7 @@ function Main() {
             <Box>
               <MatchList />
               <Link to="/match">
+                  <CurrentKbo/>
                 <button>list 더보기</button>
               </Link>
             </Box>
@@ -80,11 +80,7 @@ export const Box = styled.div`
   &:nth-child(3) > * {
     flex: 1;
   }
-<<<<<<< HEAD
-`;
 
-
-=======
   &:nth-child(3) {
     .article-title{
       font-size: 30px;
@@ -93,5 +89,4 @@ export const Box = styled.div`
       margin-top: 20px; /* 최신 뉴스와 버튼 사이 간격 설정 */
     }
     
-`;
->>>>>>> 5f4c8c39fdacd854ea534824bcbbacc81b6c9879
+`
