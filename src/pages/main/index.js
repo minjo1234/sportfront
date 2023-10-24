@@ -1,5 +1,4 @@
 import MainLayout from "../layout/MainLayout";
-import { NavbarLink } from "../layout/Header";
 import MatchList from "../../components/MatchList";
 import TeamLogoPath from "../../components/TeamLogoPath";
 import {Link} from "react-router-dom";
