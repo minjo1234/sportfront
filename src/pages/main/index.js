@@ -32,9 +32,11 @@ function Main() {
                 <button>뉴스 더보기</button>
                 <NewsLatest/>
               </Link>
-                <Box>
-                    <p>rank</p>
-                </Box>
+            </Box>
+
+            <Box>
+              <p>rank</p>
+
             </Box>
       </MainContainer>
     </MainLayout>
@@ -57,12 +59,12 @@ export const MainContainer = styled.div`
 `;
 
 export const Box = styled.div`
-  background: #333333;
+  background: #202026;
   width: 100%;
   height: 100vh;
   padding: 10px;
   font-size: 20px;
-  border: 1px solid #202030;
+  border: 1px solid #ffffff;
   text-align: center;
   border-radius: 10px;
   &:nth-child(1) {

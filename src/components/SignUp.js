@@ -67,8 +67,6 @@ export default function SignUp() {
       setNameFormatError(!isValidName);
     }
   };
-
-
   const fetchAllData = async() => {
     try {
       const response = await axios.get('/api/allUser');
@@ -85,7 +83,8 @@ export default function SignUp() {
   };
 
   useEffect(() => {
-    fetchAllData(); // 컴포넌트가 마운트될 때 한 번 호출
+ // 컴포넌트가 마운트될 때 한 번 호출
+    fetchAllData();
   }, []);
 
   const handleSubmit = async (e) => {
