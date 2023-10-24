@@ -1,4 +1,5 @@
 import MainLayout from "../layout/MainLayout";
+import { NavbarLink } from "../layout/Header";
 import MatchList from "../../components/MatchList";
 import KBOLogoPath from "../../components/KBOLogoPath";
 import {Link} from "react-router-dom";
@@ -8,8 +9,9 @@ import styled from "styled-components";
 import KLeagueLogoPath from "../../components/KLeagueLogoPath";
 function Main() {
   return (
-    <MainLayout>
+      <MainLayout>
         <MainContainer>
+
             <Box>
                 <KBOLogoPath /> {/*팀 로고*/}
                 <KLeagueLogoPath />
@@ -36,6 +38,8 @@ function Main() {
             </Box>
       </MainContainer>
     </MainLayout>
+
+
   );
 }
 
@@ -53,7 +57,7 @@ export const MainContainer = styled.div`
 `;
 
 export const Box = styled.div`
-  background: #202030;
+  background: #333333;
   width: 100%;
   height: 100vh;
   padding: 10px;
@@ -76,6 +80,18 @@ export const Box = styled.div`
   &:nth-child(3) > * {
     flex: 1;
   }
+<<<<<<< HEAD
 `;
 
 
+=======
+  &:nth-child(3) {
+    .article-title{
+      font-size: 30px;
+      color: #cccccc;
+      flex: 1; /* 나머지 공간을 최신 뉴스 텍스트에 할당 */
+      margin-top: 20px; /* 최신 뉴스와 버튼 사이 간격 설정 */
+    }
+    
+`;
+>>>>>>> 5f4c8c39fdacd854ea534824bcbbacc81b6c9879
