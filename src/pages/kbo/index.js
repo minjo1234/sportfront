@@ -2,7 +2,7 @@
 import React from 'react';
 import MainLayout from "../layout/MainLayout";
 import KBOData from "../../components/KBO/KBOData";
-import TeamLogoPath from "../../components/TeamLogoPath";
+import KBOLogoPath from "../../components/KBOLogoPath";
 import styled from "styled-components";
 
 export default function KBO(){
@@ -10,7 +10,7 @@ export default function KBO(){
         <MainLayout>
             <KBOContainer>
                 <KboBox>
-                    <TeamLogoPath />
+                    <KBOLogoPath />
                 </KboBox>
                 <KboBox>
                     <KBOData />

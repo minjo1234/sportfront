@@ -31,7 +31,7 @@ export default function KBOData() {
                     <button onClick={togglePlayerList}>KBO Player</button>
                 </div>
                 <div>
-                    {showTeamData && <TeamData />}
+                    {showTeamData && <TeamData teamFilter={teamFilter}/>}
                     {showPlayerList && <PlayerList teamFilter={teamFilter}/>}
                 </div>
             </div>
