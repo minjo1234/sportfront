@@ -1,11 +1,10 @@
 import MainLayout from "../layout/MainLayout";
-import { NavbarLink } from "../layout/Header";
 import MatchList from "../../components/MatchList";
 import KBOLogoPath from "../../components/KBOLogoPath";
 import {Link} from "react-router-dom";
 import NewsLatest from "../../news/NewsLatest";
-
 import styled from "styled-components";
+import CurrentKbo from "../../components/CurrentGame/CurrentKbo";
 import KLeagueLogoPath from "../../components/KLeagueLogoPath";
 function Main() {
   return (
@@ -21,6 +20,7 @@ function Main() {
             <Box>
               <MatchList />
               <Link to="/match">
+                  <CurrentKbo/>
                 <button>list 더보기</button>
               </Link>
             </Box>
