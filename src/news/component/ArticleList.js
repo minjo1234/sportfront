@@ -20,13 +20,13 @@ const ArticleList = ({ articles }) => {
               {row.map((article, articleIndex) => (
                   <Link to={`/articles/${article.id}`} key={article.id} className="card-link">
                     <div className="card"
-                          style={{
-                            backgroundImage: `url(${article.image_url})`, // 배경 이미지 설정
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat'
-                          }}
-                      >
+                         style={{
+                           backgroundImage: `url(${article.image_url})`, // 배경 이미지 설정
+                           backgroundSize: 'cover',
+                           backgroundPosition: 'center',
+                           backgroundRepeat: 'no-repeat'
+                         }}
+                    >
                       <div className="card-content">
                         <h1>{article.title}</h1>
                         <p>{article.content}</p> {/* 기사 요약을 표시하는 속성을 사용하도록 수정 */}

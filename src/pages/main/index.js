@@ -8,33 +8,33 @@ import NewsLatest from "../../news/NewsLatest";
 import styled from "styled-components";
 function Main() {
   return (
-    <MainLayout>
+      <MainLayout>
         <MainContainer>
-            <Box>
-                <TeamLogoPath /> {/*팀 로고*/}
-            </Box>
+          <Box>
+            <TeamLogoPath /> {/*팀 로고*/}
+          </Box>
 
-            <Box>
-              <MatchList />
-              <Link to="/match">
-                <button>list 더보기</button>
-              </Link>
-            </Box>
+          <Box>
+            <MatchList />
+            <Link to="/match">
+              <button>list 더보기</button>
+            </Link>
+          </Box>
 
-            <Box>
-              <p className='article-title'>최신 뉴스</p>
-              <Link to="/articles">
-                <div className="frame">
-                  <button className="custom-btn btn-1">더보기</button>
-                </div>
-                <NewsLatest/>
-              </Link>
-            </Box>
-            <Box>
-              <p>rank</p>
-            </Box>
-      </MainContainer>
-    </MainLayout>
+          <Box>
+            <p className='article-title'>최신 뉴스</p>
+            <Link to="/articles">
+              <div className="frame">
+                <button className="custom-btn btn-1">더보기</button>
+              </div>
+              <NewsLatest/>
+            </Link>
+          </Box>
+          <Box>
+            <p>rank</p>
+          </Box>
+        </MainContainer>
+      </MainLayout>
   );
 }
 
