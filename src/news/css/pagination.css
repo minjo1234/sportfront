@@ -3,8 +3,6 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #fff; /* 선택적으로 배경색을 지정할 수 있습니다. */
-    border-top: 1px solid #ddd; /* 선택적으로 상단 경계선을 추가할 수 있습니다. */
     padding: 10px; /* 선택적으로 여백을 추가할 수 있습니다. */
 }
 

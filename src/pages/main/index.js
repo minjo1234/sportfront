@@ -22,9 +22,11 @@ function Main() {
             </Box>
 
             <Box>
-              <p>최신 뉴스</p>
+              <p className='article-title'>최신 뉴스</p>
               <Link to="/articles">
-                <button>뉴스 더보기</button>
+                <div className="frame">
+                  <button className="custom-btn btn-1">더보기</button>
+                </div>
                 <NewsLatest/>
               </Link>
             </Box>
@@ -62,4 +64,12 @@ export const Box = styled.div`
   &:nth-child(2) {
     grid-row: 1 / span 2;
   }
+  &:nth-child(3) {
+    .article-title{
+      font-size: 30px;
+      color: #cccccc;
+      flex: 1; /* 나머지 공간을 최신 뉴스 텍스트에 할당 */
+      margin-top: 20px; /* 최신 뉴스와 버튼 사이 간격 설정 */
+    }
+    
 `;
