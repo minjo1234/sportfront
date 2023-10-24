@@ -33,7 +33,6 @@ function News() {
   return (
 
       <div className="App">
-        <h1>뉴스</h1>
         <Routes>
           <Route
               path="/"

@@ -1,4 +1,5 @@
 import MainLayout from "../layout/MainLayout";
+import { NavbarLink } from "../layout/Header";
 import MatchList from "../../components/MatchList";
 import TeamLogoPath from "../../components/TeamLogoPath";
 import {Link} from "react-router-dom";
@@ -7,31 +8,33 @@ import NewsLatest from "../../news/NewsLatest";
 import styled from "styled-components";
 function Main() {
   return (
-    <MainLayout>
+      <MainLayout>
         <MainContainer>
-            <Box>
-                <TeamLogoPath /> {/*팀 로고*/}
-            </Box>
+          <Box>
+            <TeamLogoPath /> {/*팀 로고*/}
+          </Box>
 
-            <Box>
-              <MatchList />
-              <Link to="/match">
-                <button>list 더보기</button>
-              </Link>
-            </Box>
+          <Box>
+            <MatchList />
+            <Link to="/match">
+              <button>list 더보기</button>
+            </Link>
+          </Box>
 
-            <Box>
-              <p>최신 뉴스</p>
-              <Link to="/articles">
-                <button>뉴스 더보기</button>
-                <NewsLatest/>
-              </Link>
-            </Box>
-            <Box>
-              <p>rank</p>
-            </Box>
-      </MainContainer>
-    </MainLayout>
+          <Box>
+            <p className='article-title'>최신 뉴스</p>
+            <Link to="/articles">
+              <div className="frame">
+                <button className="custom-btn btn-1">더보기</button>
+              </div>
+              <NewsLatest/>
+            </Link>
+          </Box>
+          <Box>
+            <p>rank</p>
+          </Box>
+        </MainContainer>
+      </MainLayout>
   );
 }
 
@@ -61,4 +64,12 @@ export const Box = styled.div`
   &:nth-child(2) {
     grid-row: 1 / span 2;
   }
+  &:nth-child(3) {
+    .article-title{
+      font-size: 30px;
+      color: #cccccc;
+      flex: 1; /* 나머지 공간을 최신 뉴스 텍스트에 할당 */
+      margin-top: 20px; /* 최신 뉴스와 버튼 사이 간격 설정 */
+    }
+    
 `;
