@@ -48,7 +48,7 @@ export const MainContainer = styled.div`
 `;
 
 export const Box = styled.div`
-  background: #202030;
+  background: #333333;
   width: 100%;
   height: 100%;
   font-size: 20px;
