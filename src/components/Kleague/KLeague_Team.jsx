@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router";
 
-export default function KLeagueTeam() {
+export default function KLeagueTeam({ teamFilter }) {
   const [teamData, setTeamData] = useState([]);
-
+  console.log(teamFilter);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -63,14 +64,23 @@ export default function KLeagueTeam() {
         <p style={pStyle}>무승부</p>
         <p style={pStyle}>패</p>
         <p style={pStyle}>점수</p>
-        <p style={pStyle}>마지막 10경기</p>]<p style={pStyle}>실점</p>
+        <p style={pStyle}>마지막 10경기</p>
+        <p style={pStyle}>실점</p>
         <p style={pStyle}>득실률</p>
         <p style={pStyle}>최근 5경기</p>
       </div>
       {teamData.map((team, index) => (
         <div key={index} style={{ ...commonStyle, marginTop: "10px" }}>
           <p style={pStyleElement}>{team.k_league_Ranking}</p>
-          <p style={pStyleElement}>{team.k_league_club_Name}</p>
+          <p>
+            {teamFilter === team.k_league_club_Name ? (
+              <span style={{ fontWeight: "bold", textDecoration: "underline" }}>
+                {team.k_league_club_Name}
+              </span>
+            ) : (
+              team.k_league_club_Name
+            )}
+          </p>
           <p style={pStyleElement}>{team.k_league_club_Game}</p>
           <p style={pStyleElement}>{team.k_league_Win_Point}</p>
           <p style={pStyleElement}>{team.k_league_Win}</p>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function KLeaguePlayer() {
+export default function KLeaguePlayer({ teamFilter }) {
   const [playerData, setPlayerData] = useState([]);
   const [playerDetail, setPlayerDetail] = useState(null);
   const [detailFetched, setDetailFetched] = useState(false);
@@ -15,14 +15,17 @@ export default function KLeaguePlayer() {
         const response = await axios.get("/kLeague/player");
         setPlayerData(response.data);
         setAllPlayerData(response.data);
-        console.log(response.data);
+        
       } catch (err) {
         console.error(err);
       }
     };
     fetchData();
   }, []);
-
+  
+  useEffect(() => {
+    
+  })
   const fetchPlayerDetail = async (
     k_league_player_id,
     k_league_player_img_url
@@ -142,7 +145,7 @@ export default function KLeaguePlayer() {
 
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
-
+    console.log(selectedValue);
     // 선택된 옵션 업데이트
     setSelectedOption(selectedValue);
 
@@ -150,101 +153,84 @@ export default function KLeaguePlayer() {
       // "전체"가 선택된 경우 모든 선수 표시
       setCurrentPage(1); // 페이지를 첫 페이지로 초기화
       setPlayerData(allPlayerData); // 모든 선수 표시
-    } else if (selectedValue === "FC") {
-      // FC서울에 속하는 선수 출력
+    } else if (selectedValue === "서울") {
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "FC서울"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "강원") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "강원FC"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "광주") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "광주FC"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "대구") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "대구FC"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "대전") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "대전 하나 시티즌"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "수원") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "수원 삼성"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "울산") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "울산 현대"
       );
 
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "수원FC") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "수원FC"
       );
 
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "인천") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "인천 Utd"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "전북") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "전북 현대"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "포항") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "포항 스틸러스"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     } else if (selectedValue === "제주") {
-      // 강원FC에 속하는 선수 출력
       const filteredPlayers = allPlayerData.filter(
         (data) => data.k_league_player_team === "제주 Utd"
       );
       setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
     }
-    // 다른 클럽에 대한 조건문 추가 가능
   };
-
-  // ...
-
-  // ...
 
   return (
     <div>
       <div style={commonStyle}>
-        <select
-          id="clubList"
-          onChange={handleSelectChange}
-          value={selectedOption}
-        >
+        <select id="clubList" onChange={handleSelectChange}>
           <option value="" selected="">
             전체
           </option>
-          <option value="FC">FC서울</option>
-          <option value="강원">강원FC</option>
+          <option value="서울" selected={teamFilter === "서울"}>
+            FC서울
+          </option>
+          <option value="강원" selected={teamFilter === "강원"}>
+            강원FC
+          </option>
           <option value="광주">광주FC</option>
           <option value="대구">대구FC</option>
           <option value="대전">대전 하나 시티즌</option>
