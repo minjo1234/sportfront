@@ -80,11 +80,7 @@ export const Box = styled.div`
   &:nth-child(3) > * {
     flex: 1;
   }
-<<<<<<< HEAD
-`;
 
-
-=======
   &:nth-child(3) {
     .article-title{
       font-size: 30px;
@@ -92,6 +88,4 @@ export const Box = styled.div`
       flex: 1; /* 나머지 공간을 최신 뉴스 텍스트에 할당 */
       margin-top: 20px; /* 최신 뉴스와 버튼 사이 간격 설정 */
     }
-    
-`;
->>>>>>> 5f4c8c39fdacd854ea534824bcbbacc81b6c9879
+`
