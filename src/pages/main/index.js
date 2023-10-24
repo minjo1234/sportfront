@@ -27,6 +27,7 @@ function Main() {
                 <NewsLatest/>
               </Link>
             </Box>
+
             <Box>
               <p>rank</p>
             </Box>
@@ -48,11 +49,11 @@ export const MainContainer = styled.div`
 `;
 
 export const Box = styled.div`
-  background: #202030;
+  background: #202026;
   width: 100%;
   height: 100%;
   font-size: 20px;
-  border: 1px solid #202030;
+  border: 1px solid #ffffff;
   text-align: center;
   border-radius: 10px;
   &:nth-child(1) {

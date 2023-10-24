@@ -110,3 +110,6 @@ export const HomeLink = styled(Link)`
   cursor : pointer;
   font-size : 20px;
 `
+const HomeLi = styled.li`
+  
+`

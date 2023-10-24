@@ -4,7 +4,6 @@ function Community() {
   return(
       <MainLayout>
           <div>community</div>;
-
       </MainLayout>
 
       )
