@@ -7,7 +7,7 @@ const Footer = () => {
   useEffect(() => {
     function handleScroll() {
       const scrollY = window.scrollY;
-      if (scrollY > 300) {
+      if (scrollY > 1100) {
         setIsFooterVisible(true);
       } else {  
         setIsFooterVisible(false);
@@ -24,7 +24,7 @@ const Footer = () => {
     <>
       {isFooterVisible && (
         <FooterSection>
-          <p>&copy; 2023 Baseball Analysis Information Website.</p>
+          <p style={{ margin: 0 }}>&copy; 2023 Baseball Analysis Information Website.</p>
         </FooterSection>
       )}
     </>

@@ -14,7 +14,6 @@ export default function KLeaguePlayer({ teamFilter }) {
       try {
         const response = await axios.get("/kLeague/player");
         setPlayerData(response.data);
-        setAllPlayerData(response.data);
       } catch (err) {
         console.error(err);
       }
@@ -22,11 +21,7 @@ export default function KLeaguePlayer({ teamFilter }) {
     fetchData();
   }, []);
 
-  useEffect(() => {});
-  const fetchPlayerDetail = async (
-    k_league_player_id,
-    k_league_player_img_url
-  ) => {
+  const fetchPlayerDetail = async (k_league_player_id) => {
     try {
       const response = await axios.get(`/kLeague/player/${k_league_player_id}`);
       setPlayerDetail(response.data);
@@ -85,161 +80,11 @@ export default function KLeaguePlayer({ teamFilter }) {
     }
   };
 
-  const indexOfLastPlayer = currentPage * playersPerPage;
-  const indexOfFirstPlayer = indexOfLastPlayer - playersPerPage;
-  const currentPlayers = playerData.slice(
-    indexOfFirstPlayer,
-    indexOfLastPlayer
-  );
-
-  const nextPage = () => {
-    setCurrentPage(currentPage + 1);
-  };
-
-  const prevPage = () => {
-    setCurrentPage(currentPage - 1);
-  };
-
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(playerData.length / playersPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  const maxDisplayedPages = 10; // 최대 표시할 페이지 수
-  let startPage = Math.max(1, currentPage - Math.floor(maxDisplayedPages / 2));
-  let endPage = startPage + maxDisplayedPages - 1;
-
-  if (endPage > pageNumbers.length) {
-    endPage = pageNumbers.length;
-    startPage = Math.max(1, endPage - maxDisplayedPages + 1);
-  }
-
-  // 선수 목록 스타일
-  const playerListStyle = {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr 1fr", // 4개의 열
-    gridTemplateRows: "1fr 1fr 1fr 1fr 1fr", // 5개의 행
-    gap: "10px", // 격자 간 간격
-    width: "70%",
-  };
-
-  // 각 선수 스타일
-  const playerStyle = {
-    ...commonStyle,
-    cursor: "pointer", // 클릭 가능하도록 커서 변경
-  };
-
-  // 선수 이미지 스타일
-  const playerImageStyle = {
-    width: "200px",
-    height: "200px",
-  };
-  const [selectedOption, setSelectedOption] = useState("");
-
-  // ...
-
-  // ...
-
-  const handleSelectChange = (event) => {
-    const selectedValue = event.target.value;
-    console.log(selectedValue);
-    // 선택된 옵션 업데이트
-    setSelectedOption(selectedValue);
-
-    if (selectedValue === "") {
-      // "전체"가 선택된 경우 모든 선수 표시
-      setCurrentPage(1); // 페이지를 첫 페이지로 초기화
-      setPlayerData(allPlayerData); // 모든 선수 표시
-    } else if (selectedValue === "서울") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "FC서울"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "강원") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "강원FC"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "광주") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "광주FC"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "대구") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "대구FC"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "대전") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "대전 하나 시티즌"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "수원") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "수원 삼성"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "울산") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "울산 현대"
-      );
-
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "수원FC") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "수원FC"
-      );
-
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "인천") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "인천 Utd"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "전북") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "전북 현대"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "포항") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "포항 스틸러스"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    } else if (selectedValue === "제주") {
-      const filteredPlayers = allPlayerData.filter(
-        (data) => data.k_league_player_team === "제주 Utd"
-      );
-      setPlayerData(filteredPlayers); // 선택된 팀에 해당하는 선수 표시
-    }
-  };
 
   return (
     <div>
       <div style={commonStyle}>
-        <select id="clubList" onChange={handleSelectChange}>
-          <option value="" selected="">
-            전체
-          </option>
-          <option value="서울" selected={teamFilter === "서울"}>
-            FC서울
-          </option>
-          <option value="강원" selected={teamFilter === "강원"}>
-            강원FC
-          </option>
-          <option value="광주">광주FC</option>
-          <option value="대구">대구FC</option>
-          <option value="대전">대전 하나 시티즌</option>
-          <option value="수원">수원 삼성</option>
-          <option value="수원FC">수원FC</option>
-          <option value="울산">울산 현대</option>
-          <option value="인천">인천 Utd</option>
-          <option value="전북">전북 현대</option>
-          <option value="제주">제주 Utd</option>
-          <option value="포항">포항 스틸러스</option>
-        </select>
-
+        <p style={pStyle}>팀 명</p>
         <p style={pStyle}>팀 이름</p>
         <p style={pStyle}>번호</p>
         <p style={pStyle}>사진</p>

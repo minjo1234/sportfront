@@ -12,8 +12,16 @@ const ChatRoom = () => {
   const channelId = useLocation().state.channelId;
   const [user, setUser] = useState({});
 
+  const [fontColor, setFontColor] = useState(0);
+
   const ACCESS_TOKEN = localStorage.getItem("accessToken");
 
+  const colors = [
+      "#FFC0CB","#DC143C","#FF7F50"
+    ,"#FFFF00","#00FF00","#00FFFF"
+    ,"#0000FF","#9400D3","#FF00FF"
+    ,"#FFF0F5"
+  ]
 
   useEffect(() => {
     if (ACCESS_TOKEN) {
@@ -25,6 +33,7 @@ const ChatRoom = () => {
           console.log(error);
         });
     }
+    setFontColor(Math.floor(Math.random() * 10));
   }, [ACCESS_TOKEN]);
 
   const connect = () => {
@@ -89,7 +98,9 @@ const ChatRoom = () => {
 
 
   useEffect(() => {
-    messageEndRef.current.scrollIntoView({behavior:'smooth'})
+    if(ACCESS_TOKEN){
+      messageEndRef.current.scrollIntoView({behavior:'smooth'})
+    }
   }, [chatList])
 
   return (
@@ -101,7 +112,7 @@ const ChatRoom = () => {
               return (
                 <ChatUl key={data.channelId}>
                   <li>
-                    {data.writerName} : {data.chat}
+                    <span style={{color:colors.at(fontColor)}}>{data.writerName}</span> :{data.chat}
                   </li>
                 </ChatUl>
               );
@@ -109,15 +120,16 @@ const ChatRoom = () => {
             <div ref={messageEndRef}></div>
           </ChatBox>
           <form onSubmit={(event) => handleSubmit(event, chat)}>
-            <div>
-              <input
+            <FullDiv>
+              <ChatInput
                 type="text"
                 name="chatInput"
+                placeholder="메세지 보내기"
                 onChange={handleChange}
                 value={chat}
               />
-            </div>
-            <input type="submit" value="보내기" />
+              <SendButton type="submit">Chat</SendButton>
+            </FullDiv>
           </form>
         </div>
       ) : (
@@ -131,10 +143,15 @@ const ChatRoom = () => {
 
 export default ChatRoom;
 
+
+const FullDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`
 export const ChatBox = styled.div`
-  height: 200px;
-  border: white dashed 1px;
-  max-width: 300px;
+  height: 300px;
+  max-width: 100%;
   padding-bottom:2px;
   overflow-y:auto;
   overflow-x:hidden;
@@ -142,7 +159,20 @@ export const ChatBox = styled.div`
   &::-webkit-scrollbar{
     display: none;
   }
+  margin-bottom: 10px;
 `
 export const ChatUl = styled.ul`
   color:#ffff;
+`
+
+const ChatInput = styled.input`
+  width: 100%;
+  background: #202025;
+  color: white;
+  border: #D3D3D3 1px solid;
+`
+
+const SendButton = styled.button`
+  width: 60px;
+  
 `

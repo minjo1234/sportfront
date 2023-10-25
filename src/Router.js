@@ -8,7 +8,6 @@ import MyPage from "./pages/mypage";
 import Join from "./pages/join";
 import Match from "./pages/match";
 import Chat from "./pages/chat";
-import Current from "./pages/current";
 import KBO from "./pages/kbo";
 import KLeagueTeamView from "./pages/Info/KLeague/KLeagueTeamView";
 import KboTeamView from "./pages/Info/KboTeam/KboTeamView";
@@ -17,7 +16,6 @@ import KLeague_currentView from "./pages/Info/KLeague/KLeague_currentView";
 import Article from "./pages/news";
 import ArticleDetail from "./news/component/ArticleDetail";
 import MainLayout from "./pages/layout/MainLayout";
-import KLeague from "./pages/kleague";
 
 const Router = createBrowserRouter([
   {
@@ -49,16 +47,16 @@ const Router = createBrowserRouter([
         element: <Match />,
       },
       {
+        path: "matchDetail",
+        element: <MatchDetail/>,
+      },
+      {
         path: "chat",
         element: <Chat />,
       },
       {
         path: "/kbo/team",
         element: <KboTeamView />,
-      },
-      {
-        path: "current",
-        element: <Current />,
       },
       {
         path: "/KBO",
@@ -91,6 +89,18 @@ const Router = createBrowserRouter([
             <ArticleDetail />
           </MainLayout>
         ),
+      },
+      {
+        path: '/commuDetail',
+        element: <CommuDetail/>,
+      },
+      {
+        path: '/createBoard',
+        element: <CreateBoard/>,
+      },
+      {
+        path: '/updateBoard',
+        element: <UpdateBoard/>
       },
     ],
   },
