@@ -15,17 +15,14 @@ export default function KLeaguePlayer({ teamFilter }) {
         const response = await axios.get("/kLeague/player");
         setPlayerData(response.data);
         setAllPlayerData(response.data);
-        
       } catch (err) {
         console.error(err);
       }
     };
     fetchData();
   }, []);
-  
-  useEffect(() => {
-    
-  })
+
+  useEffect(() => {});
   const fetchPlayerDetail = async (
     k_league_player_id,
     k_league_player_img_url
