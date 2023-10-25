@@ -17,9 +17,11 @@ import Article from "./pages/news";
 import ArticleDetail from "./news/component/ArticleDetail";
 import MainLayout from "./pages/layout/MainLayout";
 import MatchDetail from "./pages/matchDetail";
+
 import CommuDetail from "./pages/commuDetail";
 import CreateBoard from "./pages/createBoard";
 import UpdateBoard from "./pages/updateBoard";
+
 
 const Router = createBrowserRouter([
   {
