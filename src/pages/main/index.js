@@ -1,49 +1,45 @@
 import MainLayout from "../layout/MainLayout";
 import MatchList from "../../components/MatchList";
 import KBOLogoPath from "../../components/KBOLogoPath";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import NewsLatest from "../../news/NewsLatest";
 import styled from "styled-components";
 import CurrentKbo from "../../components/CurrentGame/CurrentKbo";
 import KLeagueLogoPath from "../../components/KLeagueLogoPath";
-import Intro from '../layout/Intro'; 
+import Intro from "../layout/Intro";
 
 function Main() {
   return (
-      <MainLayout>
-        <MainContainer>
-             <Intro/>
-            <FirstBox>
-                <KBOLogoPath /> {/*팀 로고*/}
-                <KLeagueLogoPath />
-            </FirstBox>
+    <MainLayout>
+      <MainContainer>
+        <Intro />
+        <FirstBox>
+          <KBOLogoPath /> {/*팀 로고*/}
+          <KLeagueLogoPath />
+        </FirstBox>
 
+        <SecondBox>
+          <MatchList />
+          <Link to="/match">
+            <CurrentKbo />
+            <button>list 더보기</button>
+          </Link>
+        </SecondBox>
 
-            <SecondBox>
-              <MatchList />
-              <Link to="/match">
-                  <CurrentKbo/>
-                <button>list 더보기</button>
-              </Link>
-            </SecondBox>
+        <ThirdBox>
+          <p>article</p>
+          <p>최신 뉴스</p>
+          <Link to="/articles">
+            <button>뉴스 더보기</button>
+            <NewsLatest />
+          </Link>
+        </ThirdBox>
 
-            <ThirdBox>
-              <p>article</p>
-              <p>최신 뉴스</p>
-              <Link to="/articles">
-                <button>뉴스 더보기</button>
-                <NewsLatest/>
-              </Link>
-            </ThirdBox>
-
-            <FourthBox>
-              <p>rank</p>
-
-            </FourthBox>
+        <FourthBox>
+          <p>rank</p>
+        </FourthBox>
       </MainContainer>
     </MainLayout>
-
-
   );
 }
 
@@ -66,34 +62,47 @@ export const FirstBox = styled.div`
   font-size: 20px;
   border: 1px solid #ffffff;
   text-align: center;
-  border-radius: 10px;
-  &:nth-child(1) {
-    flex: 0.5;
-    height: auto;
-    position: relative;
-  }
-  //&:nth-child(2) {
-  //  grid-row: 1 / span 2;
-  //}
-  &:nth-child(3) {
-    display: flex;
-    flex-direction: column;
-  }
-  &:nth-child(3) > * {
-    flex: 1;
-  }
-<<<<<<< HEAD
+
+  border-radius: 40px;
+  margin-top: 20px;
 `;
 
-
-=======
-  &:nth-child(3) {
-    .article-title{
-      font-size: 30px;
-      color: #cccccc;
-      flex: 1; /* 나머지 공간을 최신 뉴스 텍스트에 할당 */
-      margin-top: 20px; /* 최신 뉴스와 버튼 사이 간격 설정 */
-    }
-    
+export const SecondBox = styled.div`
+  width: 55%;
+  height: 70vh;
+  background: #202026;
+  padding: 40px;
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-radius: 40px;
+  margin-top: 20px;
 `;
->>>>>>> 5f4c8c39fdacd854ea534824bcbbacc81b6c9879
+
+export const ThirdBox = styled.div`
+  width: 30%;
+  height: 70vh;
+  background: #202026;
+  padding: 40px;
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-radius: 40px;
+  margin-top: 20px;
+`;
+
+export const FourthBox = styled.div`
+  width: 30%;
+  height: 40vh;
+  background: #202026;
+  padding: 40px;
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-radius: 40px;
+  margin-top: -420px;
+  margin-left: 1260px;
+`;
+
+// child 박스가 이해하기 어려울 수 있는데 위와 마찬가지로 1 / 2 / 3 / 4 box를 그대로 나타냅니다
+// 추후 components들 각자 넣고 꾸미면 child로 다시 변경 예정
