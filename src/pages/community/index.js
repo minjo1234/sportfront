@@ -1,9 +1,11 @@
 import MainLayout from "../layout/MainLayout";
+import Commu from "../../components/Community/Commu";
 
 function Community() {
+
   return(
       <MainLayout>
-          <div>community</div>;
+        <Commu/>
       </MainLayout>
 
       )
