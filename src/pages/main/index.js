@@ -6,38 +6,40 @@ import NewsLatest from "../../news/NewsLatest";
 import styled from "styled-components";
 import CurrentKbo from "../../components/CurrentGame/CurrentKbo";
 import KLeagueLogoPath from "../../components/KLeagueLogoPath";
+import Intro from '../layout/Intro'; 
+
 function Main() {
   return (
       <MainLayout>
         <MainContainer>
-
-            <Box>
+             <Intro/>
+            <FirstBox>
                 <KBOLogoPath /> {/*팀 로고*/}
                 <KLeagueLogoPath />
-            </Box>
+            </FirstBox>
 
 
-            <Box>
+            <SecondBox>
               <MatchList />
               <Link to="/match">
                   <CurrentKbo/>
                 <button>list 더보기</button>
               </Link>
-            </Box>
+            </SecondBox>
 
-            <Box>
+            <ThirdBox>
               <p>article</p>
               <p>최신 뉴스</p>
               <Link to="/articles">
                 <button>뉴스 더보기</button>
                 <NewsLatest/>
               </Link>
-            </Box>
+            </ThirdBox>
 
-            <Box>
+            <FourthBox>
               <p>rank</p>
 
-            </Box>
+            </FourthBox>
       </MainContainer>
     </MainLayout>
 
@@ -48,47 +50,62 @@ function Main() {
 export default Main;
 
 export const MainContainer = styled.div`
-  width: 95%;
-  height: auto;
+  width: 100%;
+  height: 250vh;
   margin: auto;
   display: flex;
-  //display: grid;
-  //grid-template-columns: 0.3fr 2fr 1fr;
-  //grid-template-rows: 1fr 1fr; /* 각 행(세로줄)의 길이 */
+  flex-wrap: wrap; // flex 아이템을 여러 줄에 걸쳐 정렬하기 위해 flex-wrap 속성 추가
   gap: 10px;
 `;
 
-export const Box = styled.div`
-  background: #202026;
-  width: 100%;
+export const FirstBox = styled.div`
+  width: 10%;
   height: 100vh;
-  padding: 10px;
+  background: #202026;
+  padding: 40px;
   font-size: 20px;
   border: 1px solid #ffffff;
   text-align: center;
-  border-radius: 10px;
-  &:nth-child(1) {
-    flex: 0.5;
-    height: auto;
-    position: relative;
-  }
-  //&:nth-child(2) {
-  //  grid-row: 1 / span 2;
-  //}
-  &:nth-child(3) {
-    display: flex;
-    flex-direction: column;
-  }
-  &:nth-child(3) > * {
-    flex: 1;
-  }
+  border-radius: 40px;
+  margin-top: 20px;
+`;
 
-  &:nth-child(3) {
-    .article-title{
-      font-size: 30px;
-      color: #cccccc;
-      flex: 1; /* 나머지 공간을 최신 뉴스 텍스트에 할당 */
-      margin-top: 20px; /* 최신 뉴스와 버튼 사이 간격 설정 */
-    }
-    
-`
+export const SecondBox = styled.div`
+  width: 55%;
+  height: 70vh;
+  background: #202026;
+  padding: 40px;
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-radius: 40px;
+  margin-top: 20px;
+`;
+
+export const ThirdBox = styled.div`
+  width: 30%;
+  height: 70vh;
+  background: #202026;
+  padding: 40px;
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-radius: 40px;
+  margin-top: 20px;
+`;
+
+export const FourthBox = styled.div`
+  width: 30%;
+  height: 40vh;
+  background: #202026;
+  padding: 40px;
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-radius: 40px;
+  margin-top: -420px;
+  margin-left: 1260px;
+`;
+
+// child 박스가 이해하기 어려울 수 있는데 위와 마찬가지로 1 / 2 / 3 / 4 box를 그대로 나타냅니다
+// 추후 components들 각자 넣고 꾸미면 child로 다시 변경 예정
