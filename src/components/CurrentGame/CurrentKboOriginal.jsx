@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-export default function CurrentKbo() {
+export default function CurrentKboOriginal() {
   // python crawling data
   const [TodayGameList, setTodayGameList] = useState(() => {
     const savedData = localStorage.getItem("TodayGameList2");
@@ -53,9 +53,6 @@ export default function CurrentKbo() {
     setIsLoading(false);
   };
 
-  const onClickToChat = (e) =>{
-
-  }
   const toggleGameContainer = (index) => {
     const newVisibility = [...gameContainerVisibility];
     newVisibility[index] = !newVisibility[index];
@@ -125,7 +122,7 @@ export default function CurrentKbo() {
   return (
     <div className="containerStyle">
       {TodayGameList.map((game, index) => (
-        <Link to="/matchDetail" state={{ channelId: index , game:game}} key={index} className="mainContent">
+        <Link to="/match" state={{ channelId: index }} key={index} className="mainContent">
           <div className="containerStyleForGame">
             {timeUntilGame ? timeUntilGame : "Xx"} <br />
             {game.State_Game}
@@ -152,26 +149,26 @@ export default function CurrentKbo() {
               />
             </span>
           </div>
-          {/*{gameContainerVisibility[index] && (*/}
-          {/*  <div className="gameContainer">*/}
-          {/*    <div className="teamInfo">*/}
-          {/*      <div className="leftInfo">*/}
-          {/*        <div>{game.leftTeam}</div>*/}
-          {/*        <div>{game.leftVestHitter}</div>*/}
-          {/*        <div>{game.leftVestPitcher}</div>*/}
-          {/*      </div>*/}
-          {/*      <div className="rightInfo">*/}
-          {/*        <div>{game.rightTeam}</div>*/}
-          {/*        <div>{game.rightVestHitter}</div>*/}
-          {/*        <div>{game.rightVestPitcher}</div>*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*    <div>야근하기 싫어요.</div>*/}
-          {/*  </div>*/}
-          {/*)}*/}
+          {gameContainerVisibility[index] && (
+            <div className="gameContainer">
+              <div className="teamInfo">
+                <div className="leftInfo">
+                  <div>{game.leftTeam}</div>
+                  <div>{game.leftVestHitter}</div>
+                  <div>{game.leftVestPitcher}</div>
+                </div>
+                <div className="rightInfo">
+                  <div>{game.rightTeam}</div>
+                  <div>{game.rightVestHitter}</div>
+                  <div>{game.rightVestPitcher}</div>
+                </div>
+              </div>
+              <div>야근하기 싫어요.</div>
+            </div>
+          )}
         </Link>
       ))}
-      {/*<button onClick={clearLocalStorage}>localStorage 초기화</button>*/}
+      <button onClick={clearLocalStorage}>localStorage 초기화</button>
     </div>
   );
 }

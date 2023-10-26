@@ -1,11 +1,11 @@
 import MainLayout from "../layout/MainLayout";
-import MatchList from "../../components/MatchList";
-import CurrentKbo from "../../components/CurrentGame/CurrentKbo";
+import CurrentKboOriginal from "../../components/CurrentGame/CurrentKboOriginal";
 
 function Match() {
+
   return (
     <MainLayout>
-      <CurrentKbo />
+      <CurrentKboOriginal/>
     </MainLayout>
   );
 }
