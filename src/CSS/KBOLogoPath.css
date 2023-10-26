@@ -30,7 +30,26 @@
     border: none; /* 버튼 스타일 초기화 */
     padding: 0; /* 버튼 내부 간격 초기화 */
     cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능함을 나타냄 */
+    position: relative; /* 추가: 포지션을 상대적(relative)로 설정 */
+}
 
+.team-logo-list button::before {
+    content: attr(alt);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.team-logo-list button:hover::before {
+    opacity: 1;
 }
 
 .team-logo-list li {
