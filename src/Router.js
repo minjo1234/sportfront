@@ -17,6 +17,8 @@ import Article from "./pages/news";
 import ArticleDetail from "./news/component/ArticleDetail";
 import MainLayout from "./pages/layout/MainLayout";
 import MatchDetail from "./pages/matchDetail";
+import KLeague_Data from "./components/Kleague/KLeague_data";
+import KLeague from "./pages/kleague";
 
 const Router = createBrowserRouter([
   {
@@ -62,6 +64,10 @@ const Router = createBrowserRouter([
       {
         path: '/KBO',
         element : <KBO/> ,
+      },
+      {
+        path: "KLeague",
+        element: <KLeague/>
       },
       {
         path: "/kLeague/player",

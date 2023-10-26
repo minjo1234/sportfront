@@ -52,9 +52,6 @@ export const MainContainer = styled.div`
   height: auto;
   margin: auto;
   display: flex;
-  //display: grid;
-  //grid-template-columns: 0.3fr 2fr 1fr;
-  //grid-template-rows: 1fr 1fr; /* 각 행(세로줄)의 길이 */
   gap: 10px;
 `;
 

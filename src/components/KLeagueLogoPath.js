@@ -1,5 +1,5 @@
-import {Link} from "react-router-dom";
-import {useState} from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import "../CSS/KLeagueLogoPath.css";
 
 export default function KLeagueLogoPath() {
@@ -10,23 +10,25 @@ export default function KLeagueLogoPath() {
     };
     return (
         <nav>
-            <button onClick={toggleMenu} className="kLeague-logo-button"><img
-                src="https://www.kleague.com/assets/images/logo/logo.png"
-                alt="KLeague Logo"
-            /></button>
-            <ul className={`kLeague-logo-list ${iskLeagueMenuOpen ? 'open' : ''}`}>
+            <button onClick={toggleMenu} className="kLeague-logo-button">
+                <img
+                    src="https://www.kleague.com/assets/images/logo/logo.png"
+                    alt="KLeague Logo"
+                />
+            </button>
+            <ul className={`kLeague-logo-list ${iskLeagueMenuOpen ? "open" : ""}`}>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "LG" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "울산" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K01.png"
-                                alt="LG Logo"
+                                alt="Olsan Logo"
                             />
                         </button>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "KT" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "포항" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K03.png"
@@ -36,7 +38,7 @@ export default function KLeagueLogoPath() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "NC" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "광주" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K22.png"
@@ -46,7 +48,7 @@ export default function KLeagueLogoPath() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "두산" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "전북" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K05.png"
@@ -56,7 +58,7 @@ export default function KLeagueLogoPath() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "SSG" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "인천" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K18.png"
@@ -66,7 +68,7 @@ export default function KLeagueLogoPath() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "KIA" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "대구" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K17.png"
@@ -76,7 +78,7 @@ export default function KLeagueLogoPath() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "롯데" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "서울" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K09.png"
@@ -86,7 +88,7 @@ export default function KLeagueLogoPath() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "한화 " }}>
+                    <Link to="/kLeague" state={{ teamFilter: "대전" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K10.png"
@@ -96,7 +98,7 @@ export default function KLeagueLogoPath() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "삼성" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "제주" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K04.png"
@@ -106,7 +108,7 @@ export default function KLeagueLogoPath() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "키움" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "수원FC" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K29.png"
@@ -116,17 +118,17 @@ export default function KLeagueLogoPath() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "키움" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "강원" }}>
                         <button>
                             <img
-                                src="https://www.kleague.com/assets/images/emblem/emblem_K21.png"
+                                src=" https://www.kleague.com/assets/images/emblem/emblem_K21.png"
                                 alt="error"
                             />
                         </button>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/KBO" state={{ teamFilter : "키움" }}>
+                    <Link to="/kLeague" state={{ teamFilter: "수원" }}>
                         <button>
                             <img
                                 src="https://www.kleague.com/assets/images/emblem/emblem_K02.png"
@@ -137,6 +139,5 @@ export default function KLeagueLogoPath() {
                 </li>
             </ul>
         </nav>
-    )
+    );
 }
-

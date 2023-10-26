@@ -12,59 +12,6 @@ const HeaderContainer = styled.div`
   align-items: center;
 `;
 
-const Dropdown = styled.div`
-  position: relative;
-  margin-right: 100px;
-  display: inline-block;
-`;
-
-const Dropth = styled.button`
-  border-radius: 4px;
-  background-color: #333333;
-  font-weight: 400;
-  color: #f8f3f3;
-  padding: 12px;
-  width: 100px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 20px;
-`;
-
-const DropdownContent = styled.div`
-  display: none;
-  position: absolute;
-  z-index: 1;
-  font-weight: 400;
-  background-color: #FBF3F3;
-  min-width: 100px;
-  ${Dropdown}:hover & {
-    display: block;
-  }
-`;
-
-const DropdownContentLink = styled(Link)`
-  display: block;
-  text-decoration: none;
-  color: rgb(37, 37, 37);
-  font-size: 13px;
-  padding: 12px 20px;
-  &:hover {
-    background-color: #FBF3F3;
-  }
-`;
-
-const HomeLink = styled(Link)`
-  border-radius: 4px;
-  background-color: #333333;
-  font-weight: 400;
-  color: #f8f3f3;
-  padding: 12px;
-  width: 100px;
-  text-align: left;
-  cursor: pointer;
-  font-size: 20px;
-  margin-right: auto;
-`;
 
 const CommunityLink = styled(Link)`
   border-radius: 4px;
